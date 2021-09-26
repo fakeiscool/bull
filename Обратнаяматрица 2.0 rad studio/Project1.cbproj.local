@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2020.10.13 15:47:20.795,=C:\Users\fake\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2020.10.13 15:47:20.860,=C:\Users\fake\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2020.10.13 15:47:39.693,C:\c++\Обратнаяматрица 2.0\Unit1.h=C:\Users\fake\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2020.10.13 15:47:39.693,C:\c++\Обратнаяматрица 2.0\Unit1.dfm=C:\Users\fake\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2020.10.13 15:47:39.693,C:\c++\Обратнаяматрица 2.0\Unit1.cpp=C:\Users\fake\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2020.10.13 15:47:40.858,C:\c++\Обратнаяматрица 2.0\Project1PCH1.h=C:\Users\fake\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2020.10.13 15:47:42.318,C:\c++\Обратнаяматрица 2.0\Project1.cbproj=C:\Users\fake\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
