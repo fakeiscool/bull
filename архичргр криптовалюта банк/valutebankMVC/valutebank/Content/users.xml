@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <BalanceList>
+      <Balance>
+        <valute>
+          <CharCode>ETH</CharCode>
+          <Name>Ethereum</Name>
+          <Rate>1942.99</Rate>
+        </valute>
+        <amount>16.202080298920734</amount>
+      </Balance>
+    </BalanceList>
+    <History>
+      <string>FaKe пополнил баланс на 16,828496286651 с помощью Bitcoin (BTC) (1)</string>
+      <string>FaKe перевел 8 с ETH юзеру BdE на ETC</string>
+      <string>Test перевел 100 с Mcoin юзеру FaKe на ETH</string>
+      <string>Testec перевел 20 с XMR юзеру FaKe на ETH (2,22687713266666)</string>
+    </History>
+    <Name>FaKe</Name>
+  </User>
+  <User>
+    <BalanceList>
+      <Balance>
+        <valute>
+          <CharCode>ETC</CharCode>
+          <Name>EthereumClassic</Name>
+          <Rate>40.1602</Rate>
+        </valute>
+        <amount>387.04787326756338</amount>
+      </Balance>
+    </BalanceList>
+    <History>
+      <string>FaKe перевел 8 с ETH юзеру BdE на ETC</string>
+    </History>
+    <Name>BdE</Name>
+  </User>
+  <User>
+    <BalanceList>
+      <Balance>
+        <valute>
+          <CharCode>BTC</CharCode>
+          <Name>Bitcoin</Name>
+          <Rate>32697.6</Rate>
+        </valute>
+        <amount>510.6</amount>
+      </Balance>
+    </BalanceList>
+    <History>
+      <string>TestObject1 пополнил баланс на 555 с помощью Bitcoin (BTC) (555)</string>
+      <string>TestObject1 вывел с баланса 44,4 BTC</string>
+    </History>
+    <Name>TestObject1</Name>
+  </User>
+  <User>
+    <BalanceList>
+      <Balance>
+        <valute>
+          <CharCode>Mcoin</CharCode>
+          <Name>MordanovCoin</Name>
+          <Rate>100</Rate>
+        </valute>
+        <amount>206.976</amount>
+      </Balance>
+    </BalanceList>
+    <History>
+      <string>Test пополнил баланс на 326,976 с помощью Bitcoin (BTC) (1)</string>
+      <string>Test вывел с баланса 20 Mcoin</string>
+      <string>Test перевел 100 с Mcoin юзеру FaKe на ETH</string>
+    </History>
+    <Name>Test</Name>
+  </User>
+  <User>
+    <BalanceList>
+      <Balance>
+        <valute>
+          <CharCode>XMR</CharCode>
+          <Name>Monero</Name>
+          <Rate>216.34</Rate>
+        </valute>
+        <amount>111.13987242303782</amount>
+      </Balance>
+      <Balance>
+        <valute>
+          <CharCode>Igrik</CharCode>
+          <Name>IgniBUSCoin</Name>
+          <Rate>500</Rate>
+        </valute>
+        <amount>1</amount>
+      </Balance>
+    </BalanceList>
+    <History>
+      <string>Testec пополнил баланс на 151,139872423038 XMR с помощью Bitcoin (1)</string>
+      <string>Testec перевел 20 с XMR юзеру FaKe на ETH (2,22687713266666)</string>
+      <string>Testec вывел с баланса 20 XMR</string>
+      <string>Testec пополнил баланс на 1 Igrik с помощью IgniBUSCoin (1)</string>
+    </History>
+    <Name>Testec</Name>
+  </User>
+  <User>
+    <BalanceList />
+    <History />
+    <Name>deleted</Name>
+  </User>
+</ArrayOfUser>

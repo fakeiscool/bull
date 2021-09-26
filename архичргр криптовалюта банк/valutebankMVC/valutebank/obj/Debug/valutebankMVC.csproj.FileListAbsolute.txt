@@ -1,0 +1,11 @@
+C:\Users\FaKe\source\repos\valutebank\valutebank\bin\Debug\valutebank.exe.config
+C:\Users\FaKe\source\repos\valutebank\valutebank\bin\Debug\valutebank.exe
+C:\Users\FaKe\source\repos\valutebank\valutebank\bin\Debug\valutebank.pdb
+C:\Users\FaKe\source\repos\valutebank\valutebank\obj\Debug\valutebankMVC.csproj.AssemblyReference.cache
+C:\Users\FaKe\source\repos\valutebank\valutebank\obj\Debug\valutebank.Properties.Resources.resources
+C:\Users\FaKe\source\repos\valutebank\valutebank\obj\Debug\valutebank.View.AddCryptoValute.resources
+C:\Users\FaKe\source\repos\valutebank\valutebank\obj\Debug\valutebank.View.MainView.resources
+C:\Users\FaKe\source\repos\valutebank\valutebank\obj\Debug\valutebankMVC.csproj.GenerateResource.cache
+C:\Users\FaKe\source\repos\valutebank\valutebank\obj\Debug\valutebankMVC.csproj.CoreCompileInputs.cache
+C:\Users\FaKe\source\repos\valutebank\valutebank\obj\Debug\valutebank.exe
+C:\Users\FaKe\source\repos\valutebank\valutebank\obj\Debug\valutebank.pdb
