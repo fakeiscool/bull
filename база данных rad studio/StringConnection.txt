@@ -1,1 +1,0 @@
-Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Access_base_2020\IST219\IST219Base.accdb;Persist Security Info=False
