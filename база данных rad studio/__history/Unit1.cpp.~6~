@@ -1,0 +1,55 @@
+//---------------------------------------------------------------------------
+// база данных
+#include <vcl.h>
+#include <stdio.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+#include "Unit2.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+FILE * ASQL; // скл файл
+//---------------------------------------------------------------------------
+AnsiString getfilenamesql(AnsiString filename){
+	AnsiString nm;
+	OpenDialog1 -> Title = filename;
+	if (!OpenDialog1->Execute) {
+		ShowMessage("Не указан файл");
+		return "";
+	}
+	nm = OpenDialog1 -> Filename;
+	return nm;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::N2Click(TObject *Sender)
+{
+	TStrings *sl = new TStringList;
+	AnsiString nfm;
+
+	nfm = getfilenamesql("Укажите файл с SQL - утверждением");
+	if (nfm == "") return;
+	ASQL = fopen(nfm.c_str(),"r");
+
+
+	DataModule2 -> AccesConnect -> Connected = true;
+	DataModule2 -> AccesConnect -> GetTableNames(sl,false);
+	for (int i=0; i < sl->Count; i++) {
+		ListBox1->Items->Add(sl->Strings[i]);
+	}
+
+
+
+	DataModule2 -> addtable -> Open();
+	ShowMessage("Соединились");
+}
+
+//---------------------------------------------------------------------------
+
