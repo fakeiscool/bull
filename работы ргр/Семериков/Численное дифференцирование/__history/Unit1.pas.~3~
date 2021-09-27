@@ -1,0 +1,58 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, math, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;   N:integer;
+
+implementation
+
+{$R *.dfm}
+
+function f(x:real):real;
+begin
+  //ShowMessage(floattostr(x));
+  f:=power(arcsin(x),2);
+end;
+
+function ha(x1,x2:real):real;
+begin
+  ha:=x2-x1;
+end;
+
+function df(a,b:real):real;
+var i,g:integer;
+    h,hi:real;
+begin
+  //hi:=1/2;
+  //h:=0.005;
+  //df:=(f(b)-f(a))/(b-a);
+  //df:=(f(a+h)-f(a))/h;
+  //df:=(1/(h()+))
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var x,a,b,hi:real;
+begin
+  a:=-1/2;
+  b:=1/2;
+  n:=3;
+  x:=df(a,b);
+  ShowMessage(floattostr(x));
+end;
+
+end.

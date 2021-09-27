@@ -1,0 +1,81 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, math, Vcl.StdCtrls, Vcl.Grids;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    StringGrid1: TStringGrid;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;   N:integer;
+
+implementation
+
+{$R *.dfm}
+
+function fa(x:real):real;
+begin
+  //ShowMessage(floattostr(x));
+  fa:=(2*power(sin(x),-1))/(sqrt(1-sqr(x)));
+end;
+
+function f(x:real):real;
+begin
+  //ShowMessage(floattostr(x));
+  f:=power(arcsin(x),2);
+end;
+
+function df(a,b:real):real;
+var i,g:integer;
+    h,hi:real;
+begin
+  hi:=(f(a+b)-f(a))/b;
+  df:=hi;
+
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var x,a,b,h:real;
+  i: Integer;
+begin
+  a:=-1/2;
+  b:=1/2;
+  h :=(b-a)/n;
+  i:=1;
+  while a < b do
+  begin
+    StringGrid1.Cells[0,i]:='X'+inttostr(i);
+    x:=df(a,a+h);
+    StringGrid1.Cells[1,i]:=floattostr(df(a,a+h));
+    StringGrid1.Cells[2,i]:=floattostr(fa(a));
+    a :=a+h;
+    inc(i);
+  end;
+
+  //x:=df(a,b);
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  n:=10;
+  StringGrid1.Rowcount:=n+1;
+  StringGrid1.Cells[0,0]:='Номер Х';
+  StringGrid1.Cells[1,0]:='Приближенное значение производной';
+  StringGrid1.Cells[2,0]:='Точный ответ';
+
+
+end;
+
+end.
