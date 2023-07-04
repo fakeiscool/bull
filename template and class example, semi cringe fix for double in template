@@ -17,7 +17,7 @@ public:
 
     mod_int() : num(0) {}
 
-    mod_int(T1 num) {
+    mod_int(T1 num) : num(num) {
         if constexpr (is_integral_v<T1>)
             this->num = num % M;
         else
