@@ -115,7 +115,7 @@ public:
 int main()
 {
     matrix<mod_int<double, 5,4>> a(3, 3); a.matrix_input(); // mod 1.25
-    matrix<double> b(3, 3); b.matrix_input();
+    matrix<double> b(3, 3); b.matrix_input(); //               1.3 4.4 6.6 8.8 11 13.2 15.4 17.6 19.8 1.25 4 6 8 10 12 14 16 18
     
     (a + b).matrix_show();
     (a - b).matrix_show();
