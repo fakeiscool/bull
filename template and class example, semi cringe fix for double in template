@@ -1,0 +1,122 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <algorithm>
+#include <set>
+#include <map>
+#include <type_traits>
+
+#define speed ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
+using namespace std;
+
+template<typename T1, unsigned int M, unsigned int S>
+class mod_int {
+public:
+    T1 num = 0;
+    T1 mod = static_cast<T1>(M) / static_cast<T1>(S);
+
+    mod_int() : num(0) {}
+
+    mod_int(T1 num) {
+        if constexpr (is_integral_v<T1>)
+            this->num = num % M;
+        else
+            this->num = fmod(num, mod);
+    }
+
+    friend istream& operator>>(istream& is, mod_int<T1, M, S>& mi) {
+        return is >> mi.num;
+    }
+
+    friend ostream& operator<<(ostream& os, mod_int<T1, M, S>& mi) {
+        return os << mi.num;
+    }
+
+    template<typename T>
+    mod_int<T1, M, S> operator+(T& other) {
+        if constexpr (is_integral_v<T> && is_integral_v<T1>)
+            return mod_int<T1, M, S>((num + other.num) % M);
+        else
+            return mod_int<T1, M, S>(fmod(num + other, mod));
+    }
+
+    template<typename T>
+    mod_int<T1, M, S> operator-(T& other) {
+        if constexpr (is_integral_v<T> && is_integral_v<T1>)
+            return mod_int<T1, M, S>((num - other.num) % M);
+        else
+            return mod_int<T1, M, S>(fmod(num - other, mod));
+    }
+
+    template<typename T>
+    void operator=(T a) {
+        if constexpr (is_integral_v<T1>)
+            this->num = a % M;
+        else
+            this->num = fmod(a, mod);
+    }
+};
+
+template <typename T>
+class matrix {
+public:
+    int r=1;
+    int c=1;
+    vector<vector<T>> cell;
+    matrix() : r(1), c(1) {}
+
+    matrix(int r, int c) : r(r), c(c) {
+        cell.resize(r, vector<T>(c));
+    }
+    void matrix_input() {
+        for (int i = 0; i < r; ++i) {
+            for (int j = 0; j < c; ++j) {
+                cin >> cell[i][j];
+            }
+        }
+    }
+
+    template <typename T2>
+    matrix<T> operator+(matrix<T2>& b) {
+        matrix<T> m(r, c);
+        for (int i = 0; i < r; ++i) {
+            for (int j = 0; j < c; ++j) {
+                m.cell[i][j] = cell[i][j] + b.cell[i][j];
+            }
+        }
+        return m;
+    }
+
+
+
+    template <typename T2>
+    matrix<T> operator-(matrix<T2>& b) {
+        matrix<T> m(r, c);
+        for (int i = 0; i < r; ++i) {
+            for (int j = 0; j < c; ++j) {
+                m.cell[i][j] = cell[i][j] - b.cell[i][j];
+            }
+        }
+        return m;
+    }
+
+    void matrix_show() {
+        for (int i = 0; i < r; ++i) {
+            for (int j = 0; j < c; ++j) {
+                cout << cell[i][j] << " ";
+            }
+            cout << "\n";
+        }
+    }
+
+};
+
+
+int main()
+{
+    matrix<mod_int<double, 5,4>> a(3, 3); a.matrix_input(); // mod 1.25
+    matrix<double> b(3, 3); b.matrix_input();
+    
+    (a + b).matrix_show();
+    (a - b).matrix_show();
+}
