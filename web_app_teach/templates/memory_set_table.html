@@ -1,0 +1,38 @@
+<!-- memory_set_table.html -->
+{% extends 'base.html' %}
+
+{% block title %}Memory Set Table{% endblock %}
+
+{% block content %}
+    <h1>Таблица памяти</h1>
+
+    <form method="post" action="{{ url_for('display_memory_set') }}">
+        <label for="num">Поиск памяти:</label>
+        <input type="text" id="num" name="num" required>
+        <button type="submit">Поиск</button>
+        <button type="button" onclick="window.location.href='{{ url_for('display_memory_set') }}'">Очистить поиск</button>
+		<button type="button" onclick="window.location.href='{{ url_for('add_memory_set_record') }}'">Добавить запись</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            {% for header in headers %}
+                <th>{{ header }}</th>
+            {% endfor %}
+            <th>Action</th>
+        </tr>
+        {% for row in (search_result if search_result else data) %}
+            <tr>
+                {% for value in row %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+                <td>
+                    <form method="post" action="{{ url_for('delete_memory_set_record') }}">
+                        <input type="hidden" name="memory_set_id" value="{{ row[0] }}">
+                        <button type="submit">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

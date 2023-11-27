@@ -1,0 +1,46 @@
+<!-- pc_table.html -->
+{% extends 'base.html' %}
+
+
+
+{% block title %}PC Table{% endblock %}
+
+{% block content %}
+    <h1>PC таблица</h1>
+    <form method="post" action="{{ url_for('display_pc_table') }}">
+        <label for="memory_size">Поиск по памяти:</label>
+        <input type="text" id="memory_size" name="memory_size" required>
+        <button type="submit">Поиск</button>
+        <button type="button" onclick="window.location.href='{{ url_for('display_pc_table') }}'">Очистить поиск</button>
+        <button type="button" onclick="window.location.href='{{ url_for('add_pc_record') }}'">Добавить запись</button>
+    </form>
+
+    <table border="1" id="pcTable">
+		
+        <thead>
+            <tr>
+                {% for header in headers %}
+                    <th>{{ header }}</th>
+                {% endfor %}
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in (search_result if search_result else data) %}
+                <tr>
+                    {% for value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                    <td>
+                        <form method="post" action="{{ url_for('delete_pc_record') }}">
+                            <input type="hidden" name="pc_id" value="{{ row[0] }}">
+                            <button type="submit">Удалить</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
