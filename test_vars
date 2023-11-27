@@ -1,0 +1,346 @@
+Возведение в степень
+ 
+ 
+def power(base, exponent):
+    return base ** exponent
+Факториал
+ 
+ 
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+Проверка на четность
+ 
+ 
+def is_even(number):
+    return number % 2 == 0
+Проверка на нечетность
+ 
+ 
+def is_odd(number):
+    return number % 2 != 0
+Сумма чисел в списке
+ 
+ 
+def list_sum(numbers):
+    return sum(numbers)
+Среднее арифметическое чисел в списке
+ 
+ 
+def mean(numbers):
+    return sum(numbers) / len(numbers)
+Поиск максимального значения в списке
+ 
+ 
+def max_value(numbers):
+    return max(numbers)
+Поиск минимального значения в списке
+ 
+ 
+def min_value(numbers):
+    return min(numbers)
+Проверка на простоту числа
+ 
+ 
+def is_prime(number):
+    if number < 2:
+        return False
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            return False
+    return True
+Переворот строки
+ 
+ 
+def reverse_string(input_str):
+    return input_str[::-1]
+Проверка на палиндром
+ 
+ 
+def is_palindrome(input_str):
+    return input_str == input_str[::-1]
+Перевод строки в верхний регистр
+ 
+ 
+def to_uppercase(input_str):
+    return input_str.upper()
+Перевод строки в нижний регистр
+ 
+ 
+def to_lowercase(input_str):
+    return input_str.lower()
+Проверка на анаграмму двух слов
+ 
+ 
+def is_anagram(word1, word2):
+    return sorted(word1) == sorted(word2)
+Подсчет количества гласных в строке
+ 
+ 
+def count_vowels(input_str):
+    vowels = "aeiouAEIOU"
+    return sum(1 for char in input_str if char in vowels)
+Подсчет количества согласных в строке
+ 
+ 
+def count_consonants(input_str):
+    consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+    return sum(1 for char in input_str if char in consonants)
+Перевод числа в строку
+ 
+ 
+def number_to_string(number):
+    return str(number)
+Перевод строки в число
+ 
+ 
+def string_to_number(input_str):
+    return int(input_str)
+Объединение двух списков
+ 
+ 
+def merge_lists(list1, list2):
+    return list1 + list2
+Получение уникальных элементов из списка
+ 
+ 
+def unique_elements(input_list):
+    return list(set(input_list))
+Реверс списка
+ 
+ 
+def reverse_list(input_list):
+    return input_list[::-1]
+Подсчет количества элементов в списке
+ 
+ 
+def count_elements(input_list):
+    return len(input_list)
+Удаление дубликатов из списка
+ 
+ 
+def remove_duplicates(input_list):
+    return list(set(input_list))
+Проверка наличия элемента в списке
+ 
+ 
+def is_element_in_list(element, input_list):
+    return element in input_list
+Получение подстроки из строки
+ 
+ 
+def get_substring(input_str, start, end):
+    return input_str[start:end]
+Замена подстроки в строке
+ 
+ 
+def replace_substring(input_str, old_substring, new_substring):
+    return input_str.replace(old_substring, new_substring)
+Подсчет количества слов в строке
+ 
+ 
+def count_words(input_str):
+    return len(input_str.split())
+Поиск индекса элемента в списке
+ 
+ 
+def find_index(element, input_list):
+    return input_list.index(element)
+Проверка на симметричность списка
+ 
+ 
+def is_symmetric(input_list):
+    return input_list == input_list[::-1]
+Проверка на вхождение подстроки в строку
+ 
+ 
+def is_substring_in_string(substring, input_str):
+    return substring in input_str
+Поиск наибольшего общего делителя
+ 
+ 
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+Поиск наименьшего общего кратного
+ 
+ 
+def lcm(a, b):
+    return abs(a*b) // gcd(a, b)
+Перевод градусов Цельсия в градусы Фаренгейта
+ 
+ 
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+Перевод градусов Фаренгейта в градусы Цельсия
+ 
+ 
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5/9
+Перевод миль в километры
+ 
+ 
+def miles_to_kilometers(miles):
+    return miles * 1.60934
+Перевод километров в мили
+ 
+ 
+def kilometers_to_miles(kilometers):
+    return kilometers / 1.60934
+Проверка наличия ключа в словаре
+ 
+ 
+def is_key_in_dict(key, input_dict):
+    return key in input_dict
+Получение значения по ключу из словаря
+ 
+ 
+def get_value_from_dict(key, input_dict):
+    return input_dict.get(key)
+Подсчет количества элементов в словаре
+ 
+ 
+def count_elements_in_dict(input_dict):
+    return len(input_dict)
+Объединение двух словарей
+ 
+ 
+def merge_dicts(dict1, dict2):
+    return {**dict1, **dict2}
+Проверка на существование файла
+ 
+ 
+import os
+
+def is_file_exists(filename):
+    return os.path.exists(filename)
+Чтение содержимого файла
+ 
+ 
+def read_file(filename):
+    with open(filename, 'r') as file:
+        return file.read()
+Запись в файл
+ 
+ 
+def write_to_file(filename, content):
+    with open(filename, 'w') as file:
+        file.write(content)
+Перевод из римских чисел в арабские
+ 
+ 
+def roman_to_arabic(roman):
+    roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    arabic = 0
+    prev_value = 0
+    for numeral in reversed(roman):
+        value = roman_dict[numeral]
+        if value < prev_value:
+            arabic -= value
+        else:
+            arabic += value
+        prev_value = value
+    return arabic
+Перевод из арабских чисел в римские
+
+def arabic_to_roman(arabic):
+    roman_dict = {1: 'I', 4: 'IV', 5: 'V', 9: 'IX', 10: 'X', 40: 'XL', 50: 'L',
+                  90: 'XC', 100: 'C', 400: 'CD', 500: 'D', 900: 'CM', 1000: 'M'}
+    roman = ''
+    for value, numeral in sorted(roman_dict.items(), key=lambda x: x[0], reverse=True):
+        while arabic >= value:
+            roman += numeral
+            arabic -= value
+    return roman
+Подсчет количества дней между двумя датами
+
+from datetime import datetime
+
+def days_between_dates(date_str1, date_str2):
+    date1 = datetime.strptime(date_str1, '%Y-%m-%d')
+    date2 = datetime.strptime(date_str2, '%Y-%m-%d')
+    return abs((date2 - date1).days)
+Перевод секунд в минуты
+
+def seconds_to_minutes(seconds):
+    return seconds / 60
+Перевод минут в часы
+
+def minutes_to_hours(minutes):
+    return minutes / 60
+Расчет площади прямоугольника
+
+
+def rectangle_area(length, width):
+    return length * width
+    
+Расчет объема цилиндра
+import math
+
+def cylinder_volume(radius, height):
+    return math.pi * radius**2 * height
+
+Является ли 2 слова анаграмми
+def are_anagrams(word1, word2):
+    return sorted(word1) == sorted(word2)
+Является ли слово палидромом
+def is_palindrome(word):
+    return word == word[::-1]
+
+
+1.	Возведение в степень
+2.	Факториал
+3.	Проверка на четность
+4.	Проверка на нечетность
+5.	Сумма чисел в списке
+6.	Среднее арифметическое чисел в списке
+7.	Поиск максимального значения в списке
+8.	Поиск минимального значения в списке
+9.	Проверка на простоту числа
+10.	Переворот строки
+11.	Проверка на палиндром
+12.	Перевод строки в верхний регистр
+13.	Перевод строки в нижний регистр
+14.	Проверка на анаграмму двух слов
+15.	Подсчет количества гласных в строке
+16.	Подсчет количества согласных в строке
+17.	Перевод числа в строку
+18.	Перевод строки в число
+19.	Объединение двух списков
+20.	Получение уникальных элементов из списка
+21.	Реверс списка
+22.	Подсчет количества элементов в списке
+23.	Удаление дубликатов из списка
+24.	Проверка наличия элемента в списке
+25.	Получение подстроки из строки
+26.	Замена подстроки в строке
+27.	Подсчет количества слов в строке
+28.	Поиск индекса элемента в списке
+29.	Проверка на симметричность списка
+30.	Проверка на вхождение подстроки в строку
+31.	Поиск наибольшего общего делителя
+32.	Поиск наименьшего общего кратного
+33.	Перевод градусов Цельсия в градусы Фаренгейта
+34.	Перевод градусов Фаренгейта в градусы Цельсия
+35.	Перевод миль в километры
+36.	Перевод километров в мили
+37.	Проверка наличия ключа в словаре
+38.	Получение значения по ключу из словаря
+39.	Подсчет количества элементов в словаре
+40.	Объединение двух словарей
+41.	Проверка на существование файла
+42.	Чтение содержимого файла
+43.	Запись в файл
+44.	Перевод из римских чисел в арабские
+45.	Перевод из арабских чисел в римские
+46.	Подсчет количества дней между двумя датами
+47.	Перевод секунд в минуты
+48.	Перевод минут в часы
+49.	Расчет площади прямоугольника
+50.	Расчет объема цилиндра
+51. Является ли 2 слова анаграмми
+52. Является ли слово палидромом
+
