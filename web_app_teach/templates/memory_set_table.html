@@ -1,0 +1,43 @@
+<!-- templates/memory_set_table.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Memory Set Table{% endblock %}
+
+{% block content %}
+    <h1>Таблица памяти</h1>
+	<form method="post" action="{{ url_for('display_memory_set') }}">
+        <label for="mem_num_size">Поиск памяти:</label>
+        <input type="text" id="mem_num_size" name="mem_num_size" required>
+        <button type="submit">Поиск</button>
+        <button type="button" onclick="window.location.href='{{ url_for('display_memory_set') }}'">Очистить поиск</button>
+        <button type="button" onclick="window.location.href='{{ url_for('add_memory_set_record') }}'">Добавить запись</button>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                {% for header in headers %}
+                    <th>{{ header }}</th>
+                {% endfor %}
+                <th>Действия</th>  <!-- Новая колонка для действия (удаление) -->
+            </tr>
+
+        </thead>
+        <tbody>
+            {% for row in (search_result if search_result else data) %}
+                <tr>
+                    {% for value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+					<td>
+						<form method="post" action="{{ url_for('delete_memory_set_record') }}">
+							<input type="hidden" name="memory_set_id" value="{{ row[0] }}">
+							<button type="submit">Удалить</button>
+						</form>
+					</td>
+                </tr>
+
+            {% endfor %}
+        </tbody>    </table>
+{% endblock %}

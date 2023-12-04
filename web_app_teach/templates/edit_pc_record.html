@@ -1,0 +1,28 @@
+<!-- edit_pc_record.html -->
+{% extends 'base.html' %}
+
+{% block title %}Редактирование записи PC{% endblock %}
+
+{% block content %}
+    <h1>Редактирование записи PC</h1>
+    <form method="post" action="{{ url_for('edit_pc_record') }}">
+        <input type="hidden" name="pc_id" value="{{ pc_record[0] }}">
+        <label for="reg_num">Регистрационный номер:</label>
+        <input type="text" id="reg_num" name="reg_num" value="{{ pc_record[1] }}" required><br>
+
+        <label for="processor_type">Тип процессора:</label>
+        <input type="text" id="processor_type" name="processor_type" value="{{ pc_record[2] }}" required><br>
+
+        <label for="disk_size">Размер диска:</label>
+        <input type="text" id="disk_size" name="disk_size" value="{{ pc_record[3] }}" required><br>
+
+        <label for="memory_size">Размер памяти:</label>
+        <select id="memory_size" name="memory_size">
+            {% for option in memory_set_options %}
+                <option value="{{ option[0] }}" {% if option[0] == pc_record[4] %}selected{% endif %}>{{ option[1] }}</option>
+            {% endfor %}
+        </select><br>
+
+        <button type="submit">Сохранить изменения</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+<!-- templates/add_memory_set_record.html -->
+{% extends 'base.html' %}
+{% block title %}Добавление записи Memory Set{% endblock %}
+
+{% block content %}
+    <h1>Добавление записи Memory Set</h1>
+    <form method="post" action="{{ url_for('add_memory_set_record') }}">
+        <label for="memory_size">Размер памяти:</label>
+        <input type="text" id="memory_size" name="memory_size" required><br>
+
+        <button type="submit">Добавить запись</button>
+    </form>
+{% endblock %}
